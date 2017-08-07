@@ -5,19 +5,19 @@
   
   <title>synchronized与对象的Monitor | DymanBlog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="synchronized与对象的Monitorsynchronized介绍关于synchronized我们已经在《synchronized与Lock》一文中进行了比较全面的介绍。 当我们使用synchronized修饰方法名时，编译后会在方法名上生成一个ACC_SYNCHRONIZED标识来实现同步；当使用synchronized修饰代码块时，编译后会在代码块的前后生成monitorenter和m">
-<meta name="keywords" content="Java线程,同步">
+  <meta name="description" content="synchronized介绍关于synchronized我们已经在《synchronized与Lock》一文中进行了比较全面的介绍。 当我们使用synchronized修饰方法名时，编译后会在方法名上生成一个ACC_SYNCHRONIZED标识来实现同步；当使用synchronized修饰代码块时，编译后会在代码块的前后生成monitorenter和monitorexit字节码来实现同步。 无论使">
+<meta name="keywords" content="Java线程">
 <meta property="og:type" content="article">
 <meta property="og:title" content="synchronized与对象的Monitor">
 <meta property="og:url" content="http://yoursite.com/2017/08/07/synchronized与对象的Monitor/index.html">
 <meta property="og:site_name" content="DymanBlog">
-<meta property="og:description" content="synchronized与对象的Monitorsynchronized介绍关于synchronized我们已经在《synchronized与Lock》一文中进行了比较全面的介绍。 当我们使用synchronized修饰方法名时，编译后会在方法名上生成一个ACC_SYNCHRONIZED标识来实现同步；当使用synchronized修饰代码块时，编译后会在代码块的前后生成monitorenter和m">
+<meta property="og:description" content="synchronized介绍关于synchronized我们已经在《synchronized与Lock》一文中进行了比较全面的介绍。 当我们使用synchronized修饰方法名时，编译后会在方法名上生成一个ACC_SYNCHRONIZED标识来实现同步；当使用synchronized修饰代码块时，编译后会在代码块的前后生成monitorenter和monitorexit字节码来实现同步。 无论使">
 <meta property="og:image" content="http://oubicdo5u.bkt.clouddn.com/Monitor%20Object%20Sequence%20Diagram.jpg">
 <meta property="og:image" content="http://oubicdo5u.bkt.clouddn.com/Java%20Monitor%E5%B7%A5%E4%BD%9C%E6%9C%BA%E7%90%86.jpg">
-<meta property="og:updated_time" content="2017-08-07T13:55:41.000Z">
+<meta property="og:updated_time" content="2017-08-07T13:58:21.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="synchronized与对象的Monitor">
-<meta name="twitter:description" content="synchronized与对象的Monitorsynchronized介绍关于synchronized我们已经在《synchronized与Lock》一文中进行了比较全面的介绍。 当我们使用synchronized修饰方法名时，编译后会在方法名上生成一个ACC_SYNCHRONIZED标识来实现同步；当使用synchronized修饰代码块时，编译后会在代码块的前后生成monitorenter和m">
+<meta name="twitter:description" content="synchronized介绍关于synchronized我们已经在《synchronized与Lock》一文中进行了比较全面的介绍。 当我们使用synchronized修饰方法名时，编译后会在方法名上生成一个ACC_SYNCHRONIZED标识来实现同步；当使用synchronized修饰代码块时，编译后会在代码块的前后生成monitorenter和monitorexit字节码来实现同步。 无论使">
 <meta name="twitter:image" content="http://oubicdo5u.bkt.clouddn.com/Monitor%20Object%20Sequence%20Diagram.jpg">
   
     <link rel="alternate" href="/atom.xml" title="DymanBlog" type="application/atom+xml">
@@ -47,7 +47,7 @@
   </nav>
   <nav id="sub-nav">
     
-      <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS"></a>
+      <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
     
   </nav>
 </header>
@@ -68,7 +68,7 @@
     
     <div class="article-entry typo" itemprop="articleBody">
       
-        <h2 id="synchronized与对象的Monitor"><a href="#synchronized与对象的Monitor" class="headerlink" title="synchronized与对象的Monitor"></a>synchronized与对象的Monitor</h2><h3 id="synchronized介绍"><a href="#synchronized介绍" class="headerlink" title="synchronized介绍"></a>synchronized介绍</h3><p>关于synchronized我们已经在《synchronized与Lock》一文中进行了比较全面的介绍。</p>
+        <h3 id="synchronized介绍"><a href="#synchronized介绍" class="headerlink" title="synchronized介绍"></a>synchronized介绍</h3><p>关于synchronized我们已经在《synchronized与Lock》一文中进行了比较全面的介绍。</p>
 <p>当我们使用synchronized修饰方法名时，编译后会在方法名上生成一个ACC_SYNCHRONIZED标识来实现同步；当使用synchronized修饰代码块时，编译后会在代码块的前后生成monitorenter和monitorexit字节码来实现同步。</p>
 <p>无论使用哪种方式实现，本质上都是对指定对象相关联的monitor的获取，只有获取到对象的monitor的线程，才可以执行方法或代码块，其他获取失败的线程会被阻塞，并放入同步队列中，进入BLOCKED状态。</p>
 <h3 id="监视器monitor"><a href="#监视器monitor" class="headerlink" title="监视器monitor"></a>监视器monitor</h3><p>这篇文章的主角——monitor，终于出现了，首先我们看一下java的官方文档中对monitor的解释：</p>
@@ -116,7 +116,7 @@
           <li>
             <span class="label">Tag:</span>
             
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java线程-同步/">Java线程,同步</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java线程/">Java线程</a></li></ul>
 
 
           </li>
@@ -133,7 +133,7 @@
   
   
     <a href="/2017/08/06/Thread和Runable的区别/" id="article-nav-older" class="article-nav-link-wrap older">
-      <strong class="article-nav-caption">Viejo</strong>
+      <strong class="article-nav-caption">Older</strong>
       <div class="article-nav-title">Thread和Runable的区别</div>
     </a>
   
