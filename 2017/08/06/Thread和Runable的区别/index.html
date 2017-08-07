@@ -6,12 +6,13 @@
   <title>Thread和Runable的区别 | DymanBlog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="1、 Thread是类，Runable是接口；java中要实现多线程，要么继承Thread类并覆写本类中的run()方法，要么实现Runnable接口的run()方法。 这两中方式最终都是通过调用start()方法来实现多线程。切记不能直接调用Thread类或Runnable对象的run()方法，因为直接调用run()方法，只会执行同一个线程中的任务，而不会启动新线程。调用start()方法将会创">
+<meta name="keywords" content="Java线程">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Thread和Runable的区别">
 <meta property="og:url" content="http://yoursite.com/2017/08/06/Thread和Runable的区别/index.html">
 <meta property="og:site_name" content="DymanBlog">
 <meta property="og:description" content="1、 Thread是类，Runable是接口；java中要实现多线程，要么继承Thread类并覆写本类中的run()方法，要么实现Runnable接口的run()方法。 这两中方式最终都是通过调用start()方法来实现多线程。切记不能直接调用Thread类或Runnable对象的run()方法，因为直接调用run()方法，只会执行同一个线程中的任务，而不会启动新线程。调用start()方法将会创">
-<meta property="og:updated_time" content="2017-08-06T13:59:09.000Z">
+<meta property="og:updated_time" content="2017-08-07T13:24:43.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Thread和Runable的区别">
 <meta name="twitter:description" content="1、 Thread是类，Runable是接口；java中要实现多线程，要么继承Thread类并覆写本类中的run()方法，要么实现Runnable接口的run()方法。 这两中方式最终都是通过调用start()方法来实现多线程。切记不能直接调用Thread类或Runnable对象的run()方法，因为直接调用run()方法，只会执行同一个线程中的任务，而不会启动新线程。调用start()方法将会创">
@@ -86,6 +87,14 @@
         </li>
         
         
+          <li>
+            <span class="label">Tag:</span>
+            
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java线程/">Java线程</a></li></ul>
+
+
+          </li>
+        
         <hr/>
       </ul>
     </footer>
@@ -94,13 +103,17 @@
     
 <nav id="article-nav" class="article-nav">
   
-    <span id="article-nav-newer" class="article-nav-link-wrap newer"></span>
-  
-  
-    <a href="/2017/08/06/hello-world/" id="article-nav-older" class="article-nav-link-wrap older">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Hello World</div>
+    <a href="/2017/08/07/synchronized与对象的Monitor/" id="article-nav-newer" class="article-nav-link-wrap newer">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          file
+        
+      </div>
     </a>
+  
+  
+    <span id="article-nav-older" class="article-nav-link-wrap older"></span>
   
 </nav>
 
