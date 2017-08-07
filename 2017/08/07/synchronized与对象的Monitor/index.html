@@ -3,20 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>file | DymanBlog</title>
+  <title>synchronized与对象的Monitor | DymanBlog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="synchronized与对象的Monitorsynchronized介绍关于synchronized我们已经在《synchronized与Lock》一文中进行了比较全面的介绍。 当我们使用synchronized修饰方法名时，编译后会在方法名上生成一个ACC_SYNCHRONIZED标识来实现同步；当使用synchronized修饰代码块时，编译后会在代码块的前后生成monitorenter和m">
-<meta name="keywords" content="Java线程 同步">
+<meta name="keywords" content="Java线程,同步">
 <meta property="og:type" content="article">
-<meta property="og:title" content="file">
+<meta property="og:title" content="synchronized与对象的Monitor">
 <meta property="og:url" content="http://yoursite.com/2017/08/07/synchronized与对象的Monitor/index.html">
 <meta property="og:site_name" content="DymanBlog">
 <meta property="og:description" content="synchronized与对象的Monitorsynchronized介绍关于synchronized我们已经在《synchronized与Lock》一文中进行了比较全面的介绍。 当我们使用synchronized修饰方法名时，编译后会在方法名上生成一个ACC_SYNCHRONIZED标识来实现同步；当使用synchronized修饰代码块时，编译后会在代码块的前后生成monitorenter和m">
 <meta property="og:image" content="http://oubicdo5u.bkt.clouddn.com/Monitor%20Object%20Sequence%20Diagram.jpg">
 <meta property="og:image" content="http://oubicdo5u.bkt.clouddn.com/Java%20Monitor%E5%B7%A5%E4%BD%9C%E6%9C%BA%E7%90%86.jpg">
-<meta property="og:updated_time" content="2017-08-07T13:53:50.000Z">
+<meta property="og:updated_time" content="2017-08-07T13:55:41.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="file">
+<meta name="twitter:title" content="synchronized与对象的Monitor">
 <meta name="twitter:description" content="synchronized与对象的Monitorsynchronized介绍关于synchronized我们已经在《synchronized与Lock》一文中进行了比较全面的介绍。 当我们使用synchronized修饰方法名时，编译后会在方法名上生成一个ACC_SYNCHRONIZED标识来实现同步；当使用synchronized修饰代码块时，编译后会在代码块的前后生成monitorenter和m">
 <meta name="twitter:image" content="http://oubicdo5u.bkt.clouddn.com/Monitor%20Object%20Sequence%20Diagram.jpg">
   
@@ -47,7 +47,7 @@
   </nav>
   <nav id="sub-nav">
     
-      <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+      <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS"></a>
     
   </nav>
 </header>
@@ -60,7 +60,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      file
+      synchronized与对象的Monitor
     </h1>
   
 
@@ -116,7 +116,7 @@
           <li>
             <span class="label">Tag:</span>
             
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java线程-同步/">Java线程 同步</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java线程-同步/">Java线程,同步</a></li></ul>
 
 
           </li>
@@ -133,7 +133,7 @@
   
   
     <a href="/2017/08/06/Thread和Runable的区别/" id="article-nav-older" class="article-nav-link-wrap older">
-      <strong class="article-nav-caption">Older</strong>
+      <strong class="article-nav-caption">Viejo</strong>
       <div class="article-nav-title">Thread和Runable的区别</div>
     </a>
   
