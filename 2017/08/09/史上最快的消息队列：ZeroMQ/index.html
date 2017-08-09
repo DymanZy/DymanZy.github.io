@@ -5,18 +5,18 @@
   
   <title>史上最快的消息队列：ZeroMQ | DymanBlog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="ZeroMQ官方说法： ZMQ是一个简单好用的传输层，像框架一样的的一个socket library，它使得Socket编程更加简单、简洁和性能更高。它是一个消息处理队列库，可在多线程、内核和主机盒之间弹性伸缩。ZMQ的明确目标是“成为标准网络协议栈的一部分，之后进入Linux内核”。现在还未看到它们的成功，但是，它无疑是极具前景的、并且是人们更加需要的“传统”BSD套接字之上的一层封装。ZMQ让">
+  <meta name="description" content="ZeroMQ最近在公司实习使用到这个消息传输框架，发现传输效率真的不是一般的快，而且还非常任性地支持随机连接顺序，即可以client先连接、server后上线，在服务器的应用上还可以用于分布式扩展。这里向大家安利一波，也算是记录自己在ZMQ方面的学习的过程~ 官方说法： ZMQ是一个简单好用的传输层，像框架一样的的一个socket library，它使得Socket编程更加简单、简洁和性能更高。它">
 <meta name="keywords" content="ZeroMQ源码分析">
 <meta property="og:type" content="article">
 <meta property="og:title" content="史上最快的消息队列：ZeroMQ">
 <meta property="og:url" content="http://yoursite.com/2017/08/09/史上最快的消息队列：ZeroMQ/index.html">
 <meta property="og:site_name" content="DymanBlog">
-<meta property="og:description" content="ZeroMQ官方说法： ZMQ是一个简单好用的传输层，像框架一样的的一个socket library，它使得Socket编程更加简单、简洁和性能更高。它是一个消息处理队列库，可在多线程、内核和主机盒之间弹性伸缩。ZMQ的明确目标是“成为标准网络协议栈的一部分，之后进入Linux内核”。现在还未看到它们的成功，但是，它无疑是极具前景的、并且是人们更加需要的“传统”BSD套接字之上的一层封装。ZMQ让">
+<meta property="og:description" content="ZeroMQ最近在公司实习使用到这个消息传输框架，发现传输效率真的不是一般的快，而且还非常任性地支持随机连接顺序，即可以client先连接、server后上线，在服务器的应用上还可以用于分布式扩展。这里向大家安利一波，也算是记录自己在ZMQ方面的学习的过程~ 官方说法： ZMQ是一个简单好用的传输层，像框架一样的的一个socket library，它使得Socket编程更加简单、简洁和性能更高。它">
 <meta property="og:image" content="http://oubicdo5u.bkt.clouddn.com/ZeroMQ%E7%9A%84%E5%B1%82%E7%BA%A7%E6%A8%A1%E5%9E%8B.png">
-<meta property="og:updated_time" content="2017-08-09T14:31:20.000Z">
+<meta property="og:updated_time" content="2017-08-09T15:34:59.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="史上最快的消息队列：ZeroMQ">
-<meta name="twitter:description" content="ZeroMQ官方说法： ZMQ是一个简单好用的传输层，像框架一样的的一个socket library，它使得Socket编程更加简单、简洁和性能更高。它是一个消息处理队列库，可在多线程、内核和主机盒之间弹性伸缩。ZMQ的明确目标是“成为标准网络协议栈的一部分，之后进入Linux内核”。现在还未看到它们的成功，但是，它无疑是极具前景的、并且是人们更加需要的“传统”BSD套接字之上的一层封装。ZMQ让">
+<meta name="twitter:description" content="ZeroMQ最近在公司实习使用到这个消息传输框架，发现传输效率真的不是一般的快，而且还非常任性地支持随机连接顺序，即可以client先连接、server后上线，在服务器的应用上还可以用于分布式扩展。这里向大家安利一波，也算是记录自己在ZMQ方面的学习的过程~ 官方说法： ZMQ是一个简单好用的传输层，像框架一样的的一个socket library，它使得Socket编程更加简单、简洁和性能更高。它">
 <meta name="twitter:image" content="http://oubicdo5u.bkt.clouddn.com/ZeroMQ%E7%9A%84%E5%B1%82%E7%BA%A7%E6%A8%A1%E5%9E%8B.png">
   
     <link rel="alternate" href="/atom.xml" title="DymanBlog" type="application/atom+xml">
@@ -67,7 +67,8 @@
     
     <div class="article-entry typo" itemprop="articleBody">
       
-        <h3 id="ZeroMQ"><a href="#ZeroMQ" class="headerlink" title="ZeroMQ"></a>ZeroMQ</h3><p>官方说法： ZMQ是一个简单好用的传输层，像框架一样的的一个socket library，它使得Socket编程更加简单、简洁和性能更高。它是一个消息处理队列库，可在多线程、内核和主机盒之间弹性伸缩。ZMQ的明确目标是“成为标准网络协议栈的一部分，之后进入Linux内核”。现在还未看到它们的成功，但是，它无疑是极具前景的、并且是人们更加需要的“传统”BSD套接字之上的一层封装。ZMQ让编写高性能网络应用程序极为简单和有趣。</p>
+        <h3 id="ZeroMQ"><a href="#ZeroMQ" class="headerlink" title="ZeroMQ"></a>ZeroMQ</h3><p>最近在公司实习使用到这个消息传输框架，发现传输效率真的不是一般的快，而且还非常任性地支持随机连接顺序，即可以client先连接、server后上线，在服务器的应用上还可以用于分布式扩展。这里向大家安利一波，也算是记录自己在ZMQ方面的学习的过程~</p>
+<p>官方说法： ZMQ是一个简单好用的传输层，像框架一样的的一个socket library，它使得Socket编程更加简单、简洁和性能更高。它是一个消息处理队列库，可在多线程、内核和主机盒之间弹性伸缩。ZMQ的明确目标是“成为标准网络协议栈的一部分，之后进入Linux内核”。现在还未看到它们的成功，但是，它无疑是极具前景的、并且是人们更加需要的“传统”BSD套接字之上的一层封装。ZMQ让编写高性能网络应用程序极为简单和有趣。</p>
 <h4 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h4><p><strong>连接先后顺序无关、自动重连机制</strong>。ZeroMQ的socket有个特色就是对于谁先bind谁后connect之类的完全都不在乎，如果是connect先行，发现连接无法建立，ZMQ会自动重试，当bind也确立了，连线就自动接上了。</p>
 <p><strong>多人Socket连线、多位址绑定</strong>。ZMQ的socket之间可以多个互相连线，所以一个socket的另一端可能有N个结点连接，除此之外，同一个socket也可以绑在不同的位址上。</p>
 <p><strong>自动负载平衡</strong>。REQ端会将send的message用Round-robin的方式（这个又是什么？）分给所有远端连线，而你有多少个连线，他都会照一样的规则分配。</p>
