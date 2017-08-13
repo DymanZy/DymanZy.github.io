@@ -3,19 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>ZeroMQ连接的建立与重连机制 | DymanBlog</title>
+  <title>源码分析·ZeroMQ连接的建立与重连机制 | DymanBlog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="ZeroMQ，作为一个消息通信的框架，最重要的还是通信的可靠性，而这其中最重要的就是连接断开之后的重连接机制。在这里，我们分别分析一下ZMQ的连接建立过程和重连接过程。 回顾在分析之前，我们先来回顾一下SocketBase、SessionBase和Poller这几个类的关系。   ZeroMQ是一个消息传输的框架，介于应用层和传输层之间，其内部将复杂的通讯操作封装了一系列的API供应用层调用。在实">
 <meta name="keywords" content="ZeroMQ源码分析">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ZeroMQ连接的建立与重连机制">
-<meta property="og:url" content="http://yoursite.com/2017/08/11/ZeroMQ连接的建立与重连机制/index.html">
+<meta property="og:title" content="源码分析·ZeroMQ连接的建立与重连机制">
+<meta property="og:url" content="http://yoursite.com/2017/08/11/源码分析·ZeroMQ连接的建立与重连机制/index.html">
 <meta property="og:site_name" content="DymanBlog">
 <meta property="og:description" content="ZeroMQ，作为一个消息通信的框架，最重要的还是通信的可靠性，而这其中最重要的就是连接断开之后的重连接机制。在这里，我们分别分析一下ZMQ的连接建立过程和重连接过程。 回顾在分析之前，我们先来回顾一下SocketBase、SessionBase和Poller这几个类的关系。   ZeroMQ是一个消息传输的框架，介于应用层和传输层之间，其内部将复杂的通讯操作封装了一系列的API供应用层调用。在实">
 <meta property="og:image" content="http://oubicdo5u.bkt.clouddn.com/zmq%E4%BC%A0%E8%BE%93%E5%85%B3%E7%B3%BB.png">
-<meta property="og:updated_time" content="2017-08-11T15:38:43.000Z">
+<meta property="og:updated_time" content="2017-08-13T09:03:27.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ZeroMQ连接的建立与重连机制">
+<meta name="twitter:title" content="源码分析·ZeroMQ连接的建立与重连机制">
 <meta name="twitter:description" content="ZeroMQ，作为一个消息通信的框架，最重要的还是通信的可靠性，而这其中最重要的就是连接断开之后的重连接机制。在这里，我们分别分析一下ZMQ的连接建立过程和重连接过程。 回顾在分析之前，我们先来回顾一下SocketBase、SessionBase和Poller这几个类的关系。   ZeroMQ是一个消息传输的框架，介于应用层和传输层之间，其内部将复杂的通讯操作封装了一系列的API供应用层调用。在实">
 <meta name="twitter:image" content="http://oubicdo5u.bkt.clouddn.com/zmq%E4%BC%A0%E8%BE%93%E5%85%B3%E7%B3%BB.png">
   
@@ -33,7 +33,7 @@
     
   
       <div id="container" class="container">
-        <article id="post-ZeroMQ连接的建立与重连机制" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-源码分析·ZeroMQ连接的建立与重连机制" class="article article-type-post" itemscope itemprop="blogPost">
   <header id="header" class="header">
   <nav id="main-nav" class="main-nav">
     
@@ -59,7 +59,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      ZeroMQ连接的建立与重连机制
+      源码分析·ZeroMQ连接的建立与重连机制
     </h1>
   
 
@@ -103,7 +103,7 @@
       <ul class="article-meta">
         <li>
           <span class="label">Published Date:</span>
-          <a href="/2017/08/11/ZeroMQ连接的建立与重连机制/" class="article-date">
+          <a href="/2017/08/11/源码分析·ZeroMQ连接的建立与重连机制/" class="article-date">
   <time datetime="2017-08-11T15:35:02.000Z" itemprop="datePublished">2017-08-11</time>
 </a>
 
