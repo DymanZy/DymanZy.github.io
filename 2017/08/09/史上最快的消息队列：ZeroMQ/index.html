@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-Hans">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -84,7 +84,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="史上最快的消息队列：ZeroMQ">
 <meta property="og:url" content="http://yoursite.com/2017/08/09/史上最快的消息队列：ZeroMQ/index.html">
-<meta property="og:site_name" content="DymanBlog">
+<meta property="og:site_name" content="Dyman的博客">
 <meta property="og:description" content="ZeroMQ最近在公司实习使用到这个消息传输框架，发现传输效率真的不是一般的快，而且还非常任性地支持随机连接顺序，即可以client先连接、server后上线，在服务器的应用上还可以用于分布式扩展。这里向大家安利一波，也算是记录自己在ZMQ方面的学习的过程~ 官方说法： ZMQ是一个简单好用的传输层，像框架一样的的一个socket library，它使得Socket编程更加简单、简洁和性能更高。它">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://oubicdo5u.bkt.clouddn.com/ZeroMQ%E7%9A%84%E5%B1%82%E7%BA%A7%E6%A8%A1%E5%9E%8B.png">
@@ -100,7 +100,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Gemini',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -128,7 +128,7 @@
 
 
 
-  <title>史上最快的消息队列：ZeroMQ | DymanBlog</title>
+  <title>史上最快的消息队列：ZeroMQ | Dyman的博客</title>
   
 
 
@@ -158,7 +158,7 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">DymanBlog</span>
+        <span class="site-title">Dyman的博客</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -274,7 +274,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="DymanBlog">
+      <meta itemprop="name" content="Dyman的博客">
     </span>
 
     
@@ -307,6 +307,16 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/08/09/史上最快的消息队列：ZeroMQ/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/08/09/史上最快的消息队列：ZeroMQ/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -437,6 +447,9 @@
           
 
   
+    <div class="comments" id="comments">
+    </div>
+  
 
 
 
@@ -473,6 +486,10 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.gif"
+                alt="dyman" />
+            
               <p class="site-author-name" itemprop="name">dyman</p>
               <p class="site-description motion-element" itemprop="description"></p>
           </div>
@@ -491,15 +508,24 @@
             
 
             
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
 
             
               
               
               <div class="site-state-item site-state-tags">
-                
+                <a href="/tags/index.html">
                   <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">标签</span>
-                
+                </a>
               </div>
             
 
@@ -507,6 +533,22 @@
 
           
 
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/dymanZy" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:dyman_zy@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
           
 
           
@@ -568,7 +610,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
 
 
 
@@ -668,6 +710,13 @@
   
   
 
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
@@ -711,6 +760,28 @@
 
 
 
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'CoM3L42DoMJCMVG32eHmvKNx-gzGzoHsz',
+        appKey: 'u7z6dh6SNWq5XLWrwCCM8Tcv',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 
